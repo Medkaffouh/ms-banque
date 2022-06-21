@@ -21,4 +21,6 @@ public class Compte {
     @Enumerated(EnumType.STRING)
     @Column(length = 10)
     private TypeCompte type;
+    @ManyToOne
+    private Client client;
 }
