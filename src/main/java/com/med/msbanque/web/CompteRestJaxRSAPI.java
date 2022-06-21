@@ -3,11 +3,13 @@ package com.med.msbanque.web;
 import com.med.msbanque.entities.Compte;
 import com.med.msbanque.repositories.CompteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+@Component
 @Path("/banque")
 public class CompteRestJaxRSAPI {
     @Autowired //-> l'injection de dependence ne peux faire que sur les composant spring, c-a-d spring ne va pas
