@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.*;
 import javax.ws.rs.*;
 import java.util.List;
 
-@RestController
+//@RestController
 @RequestMapping("/banque")
 public class CompteRestControllerAPI {
     @Autowired
     private CompteRepository compteRepository;
 
-    @GetMapping("/comptes")
+    @GetMapping(value = "/comptes",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
     public List<Compte> compteList(){
         return compteRepository.findAll();
     }
 
-    @GetMapping("/comptes/{id}")
+    @GetMapping(value = "/comptes/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
     public Compte getCompte(@PathVariable Long id){
         return compteRepository.findById(id).get();
     }
