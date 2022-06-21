@@ -21,7 +21,9 @@ public class CompteRestJaxRSAPI {
 
     @Path("/comptes")
     @GET
-    @Produces({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    // pour json jersey il utilise Jackson
+    // pour xml jersey il utilise JaxB (il y'a un condition vous devez ajouter l'annotation @XmlRoutElement dans la class que vous allez serializer Compte (POJO)
     public List<Compte> compteList(){
         return compteRepository.findAll();
     }
